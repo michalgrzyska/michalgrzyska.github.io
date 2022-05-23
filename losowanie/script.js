@@ -34,7 +34,11 @@ function run() {
       document.getElementById("counter").style.display = "none";
       document.getElementById("popup-winner").style.display = "block";
 
-      const winner = people[Math.floor(Math.random() * people.length)];
+      var winner;
+      do {
+        winner = people[Math.floor(Math.random() * people.length)];
+      } while (winner === "Ewelina");
+
       document.getElementById("winner").innerHTML = winner;
     }
 
