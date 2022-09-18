@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tropico</title>
+  </head>
+  <body onload="tropicoMission()"></body>
+  <script>
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function tropicoMission() {
+      var campaign = random(1, 3);
+
+      switch (campaign) {
+        case 1: // main
+          document.write(`Main, mission ${random(1, 20)}`);
+          return;
+        case 2: // dlc
+          document.write(`DLC, mission ${random(1, 12)}`);
+          return;
+        case 3: // additional
+          document.write(`Additional, mission ${random(1, 10)}`);
+          return;
+      }
+    }
+  </script>
+</html>
