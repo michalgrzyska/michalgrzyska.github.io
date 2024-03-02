@@ -1,0 +1,30 @@
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.offer-item > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.offer-item h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.offer-item p {
+  margin-top: 20px;
+}
+
+.offer-item.other {
+  margin-top: 35px;
+}
+
+@media (max-width: 768px) {
+  .offer-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

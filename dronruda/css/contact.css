@@ -1,0 +1,29 @@
+.contact-container {
+  display: flex;
+}
+
+.contact-container > div {
+  width: 50%;
+}
+
+.contact-container > div > p.text-icon {
+  margin-bottom: 8px;
+}
+
+.contact-container > div.pricing > p {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-container > div {
+    width: 100%;
+  }
+
+  div.pricing {
+    margin-top: 20px;
+  }
+}
