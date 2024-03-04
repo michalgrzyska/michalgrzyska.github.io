@@ -67,9 +67,11 @@ div.photo-divider > div {
   height: 400px;
 }
 
-@media (max-width: 768px) {
+
   .page-width,
   .text {
-    margin: 0 20px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-}
+

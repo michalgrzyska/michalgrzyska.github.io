@@ -23,6 +23,7 @@
 
   --max-width: 1000px;
   --header-height: 80px;
+  --responsive-breakpoint: 768px;
 }
 
 @media (max-width: 768px) {

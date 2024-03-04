@@ -1,21 +1,18 @@
 .contact-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
 }
 
-.contact-container > div {
-  width: 50%;
-}
 
-.contact-container > div > p.text-icon {
-  margin-bottom: 8px;
-}
 
-.contact-container > div.pricing > p {
+.contact-container > div > p {
   margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
   .contact-container {
+    display: flex;
     flex-direction: column;
   }
 
