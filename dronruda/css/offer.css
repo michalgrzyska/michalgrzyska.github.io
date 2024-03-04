@@ -19,6 +19,10 @@
   margin-top: 20px;
 }
 
+.offer-item img {
+  width: 64px;
+}
+
 .offer-item.other {
   margin-top: 35px;
 }
