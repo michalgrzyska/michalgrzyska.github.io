@@ -13,7 +13,7 @@ header > div {
 }
 
 header > div img.logo {
-  height: 2rem;
+  height: 2.2rem;
 }
 
 div.social-media {
@@ -23,7 +23,7 @@ div.social-media {
 
 div.social-media img.social-media-icon {
   cursor: pointer;
-  width: 32px;
+  width: 24px;
 }
 
 div.social-media img.social-media-icon:hover {
