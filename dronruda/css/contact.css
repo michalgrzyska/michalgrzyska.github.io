@@ -4,8 +4,6 @@
   gap: 35px;
 }
 
-
-
 .contact-container > div > p {
   margin-bottom: 16px;
 }
@@ -14,6 +12,7 @@
   .contact-container {
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
   }
 
   .contact-container > div {

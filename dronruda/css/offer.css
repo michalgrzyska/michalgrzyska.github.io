@@ -31,4 +31,13 @@
   .offer-grid {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .offer-item img {
+    width: 48px;
+  }
+
+  .offer-item h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
 }

@@ -8,7 +8,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   padding-bottom: 20px;
 }
@@ -25,5 +25,9 @@ p {
   h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
   }
 }
