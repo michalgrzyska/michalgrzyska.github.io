@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>dronruda.pl</title>
+    <script src="./js/date.js"></script>
   </head>
   <body>
     <header>
@@ -165,7 +166,7 @@
           <div></div>
           <img src="./img/offer-image.jpg" />
         </div>
-        <div class="text">
+        <div class="text" id="contact">
           <h1>Kontakt i wycena</h1>
           <div class="contact-container">
             <div>
@@ -203,6 +204,22 @@
           </div>
         </div>
       </section>
+      <footer><div class="page-width">
+        <div class="footer-section">
+          <img class="logo" src="./img/logo.png" />
+          <p>© dronruda.pl 2021 - <span id="currentDate"></span></p>
+        </div>
+        <div class="footer-section">
+          <p><a href="#offer">Nasza oferta</a></p>
+          <p><a href="#about">O nas</a></p>
+          <p><a href="#contact">Kontakt i wycena</a></p>
+        </div>
+        <div class="footer-section">
+          Created by <a href="https://www.linkedin.com/in/michalgrzyska" target="_blank">Michał Grzyśka</a>
+        </div>
+      </div></footer>
     </div>
+    
   </body>
+  <script>getDate();</script>
 </html>

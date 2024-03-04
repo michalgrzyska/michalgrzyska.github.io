@@ -1,0 +1,35 @@
+footer {
+  background-color: var(--neutral-color-1);
+}
+
+footer * {
+  color: var(--neutral-color-9);
+}
+
+footer > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin: auto;
+  height: 200px;
+}
+
+footer img.logo {
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  footer > div {
+    grid-template-columns: repeat(1, 1fr);
+    height: unset;
+    padding: 40px 0;
+  }
+}
