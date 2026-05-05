@@ -1,31 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tropico</title>
+    <title>Tropico Mission Picker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
-  <body onload="tropicoMission()"></body>
-  <script>
-    function random(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-    function tropicoMission() {
-      var campaign = random(1, 3);
-
-      switch (campaign) {
-        case 1: // main
-          document.write(`Main, mission ${random(1, 20)}`);
-          return;
-        case 2: // dlc
-          document.write(`DLC, mission ${random(1, 12)}`);
-          return;
-        case 3: // additional
-          document.write(`Additional, mission ${random(1, 10)}`);
-          return;
-      }
-    }
-  </script>
+  <body>
+    <div class="bg"></div>
+    <div class="container">
+      <div class="emblem">🌴</div>
+      <h1 class="title">Tropico</h1>
+      <p class="subtitle">Mission Selector</p>
+      <div class="divider"></div>
+      <p class="prompt">Choose your island, El Presidente</p>
+      <div class="buttons">
+        <a href="tropico4.html" class="game-btn btn-t4">
+          <span class="btn-label">The Banana Republic</span>
+          Tropico 4
+        </a>
+        <a href="tropico6.html" class="game-btn btn-t6">
+          <span class="btn-label">The Archipelago Era</span>
+          Tropico 6
+        </a>
+      </div>
+      <p class="footer">¡Viva El Presidente!</p>
+    </div>
+  </body>
 </html>

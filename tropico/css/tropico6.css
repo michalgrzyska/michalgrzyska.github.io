@@ -1,0 +1,97 @@
+/* ─────────────────────────────────────────────────────────────
+   tropico6.css — Tropico 6 theme variables + badge colours.
+   Load after shared.css.
+───────────────────────────────────────────────────────────── */
+
+:root {
+  --bg-base: #0a1a28;
+  --bg-ellipse-1: rgba(20, 100, 160, 0.3);
+  --bg-ellipse-2: rgba(10, 80, 60, 0.35);
+  --bg-ellipse-3: rgba(10, 25, 40, 0.85);
+  --bg-stripe-angle: 60deg;
+  --bg-stripe-color: rgba(30, 120, 200, 0.03);
+
+  --text-color: #e0e8f0;
+  --accent: #48a0d8;
+  --accent-glow: rgba(72, 160, 216, 0.5);
+
+  --card-bg-1: rgba(8, 18, 32, 0.97);
+  --card-bg-2: rgba(12, 28, 50, 0.88);
+  --card-border: rgba(48, 100, 160, 0.35);
+  --card-inset: rgba(72, 160, 216, 0.1);
+
+  --mission-num-color: #305080;
+  --mission-name-color: #d0e8ff;
+  --desc-color: #8ab0d0;
+  --back-link-color: #6090c0;
+  --tag-color: #304860;
+  --tag-span-color: #5080a0;
+  --empty-color: #1a3050;
+
+  --btn-p-color: #d0e8ff;
+  --btn-p-bg: linear-gradient(135deg, #1060a0 0%, #1880d0 50%, #0a4880 100%);
+  --btn-p-shadow: 0 4px 20px rgba(24, 128, 208, 0.4);
+  --btn-p-shadow-hover: 0 6px 28px rgba(24, 128, 208, 0.65);
+
+  --btn-s-bg: rgba(8, 18, 32, 0.8);
+  --btn-s-color: #5080a0;
+  --btn-s-border: rgba(48, 100, 160, 0.4);
+  --btn-s-border-hover: rgba(72, 160, 216, 0.7);
+  --btn-s-color-hover: #48a0d8;
+
+  --filter-border: rgba(48, 100, 160, 0.3);
+  --filter-color: #304860;
+  --filter-border-hover: rgba(72, 160, 216, 0.5);
+  --filter-color-hover: #5080a0;
+  --filter-active-border: #48a0d8;
+  --filter-active-color: #48a0d8;
+  --filter-active-bg: rgba(72, 160, 216, 0.1);
+
+  --stats-color: #1a3050;
+}
+
+/* ── T6 era badge variants ── */
+.badge-colonial {
+  background: rgba(120, 80, 10, 0.25);
+  border: 1px solid rgba(180, 120, 40, 0.5);
+  color: #d4a060;
+}
+
+.badge-world-wars {
+  background: rgba(120, 30, 20, 0.25);
+  border: 1px solid rgba(180, 60, 40, 0.5);
+  color: #e07060;
+}
+
+.badge-cold-war {
+  background: rgba(20, 60, 120, 0.3);
+  border: 1px solid rgba(60, 120, 200, 0.5);
+  color: #80b0e8;
+}
+
+.badge-modern {
+  background: rgba(20, 100, 60, 0.25);
+  border: 1px solid rgba(40, 160, 100, 0.5);
+  color: #60d0a0;
+}
+
+.badge-dlc {
+  background: rgba(80, 20, 120, 0.25);
+  border: 1px solid rgba(140, 60, 200, 0.5);
+  color: #b080e0;
+}
+
+/* ── T6-only notice block ── */
+.notice {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 1rem;
+  background: rgba(72, 160, 216, 0.05);
+  border: 1px solid rgba(72, 160, 216, 0.15);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: #305060;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.05em;
+}

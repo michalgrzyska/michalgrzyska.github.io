@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-API-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tropico 6 — Mission Picker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/tropico6.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="page">
+      <div class="header">
+        <a href="index.html" class="back-link">← Back</a>
+        <h1 class="header-title">Tropico 6</h1>
+        <div class="header-spacer"></div>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Colonial">Colonial</button>
+        <button class="filter-btn" data-filter="World Wars">World Wars</button>
+        <button class="filter-btn" data-filter="Cold War">Cold War</button>
+        <button class="filter-btn" data-filter="Modern">Modern</button>
+        <button class="filter-btn" data-filter="DLC">DLC</button>
+      </div>
+
+      <div class="controls">
+        <button
+          class="btn-roll btn-primary"
+          id="btn-roll"
+          onclick="rollMission()">
+          🎲 Random Mission
+        </button>
+      </div>
+
+      <div class="card" id="card">
+        <div class="card-empty">
+          <div class="icon">🏝️</div>
+          <div>Press the button, El Presidente</div>
+        </div>
+      </div>
+
+      <div class="notice">
+        💡 Tropico 6 features standalone missions (no campaign). Base-game
+        missions unlock progressively by completing others. DLC campaigns can be
+        played independently. Difficulty can be set to Easy, Normal, or Hard for
+        each mission.
+      </div>
+
+      <p class="stats" id="stats"></p>
+    </div>
+
+    <script src="js/missions-t6.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/tropico6.js"></script>
+  </body>
+</html>

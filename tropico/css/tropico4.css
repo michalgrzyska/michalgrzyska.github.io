@@ -1,0 +1,70 @@
+/* ─────────────────────────────────────────────────────────────
+   tropico4.css — Tropico 4 theme variables + badge colours.
+   Load after shared.css.
+───────────────────────────────────────────────────────────── */
+
+:root {
+  --bg-base: #1a0e06;
+  --bg-ellipse-1: rgba(160, 80, 10, 0.35);
+  --bg-ellipse-2: rgba(100, 50, 10, 0.3);
+  --bg-ellipse-3: rgba(30, 15, 5, 0.8);
+  --bg-stripe-angle: -30deg;
+  --bg-stripe-color: rgba(200, 100, 20, 0.03);
+
+  --text-color: #f0e0c0;
+  --accent: #d4a017;
+  --accent-glow: rgba(212, 160, 23, 0.4);
+
+  --card-bg-1: rgba(40, 20, 5, 0.95);
+  --card-bg-2: rgba(60, 30, 8, 0.85);
+  --card-border: rgba(180, 100, 20, 0.3);
+  --card-inset: rgba(212, 160, 23, 0.1);
+
+  --mission-num-color: #8a7040;
+  --mission-name-color: #f5e0a0;
+  --desc-color: #c8b080;
+  --back-link-color: #c8a060;
+  --tag-color: #7a6040;
+  --tag-span-color: #a09060;
+  --empty-color: #5a4520;
+
+  --btn-p-color: #fff5e0;
+  --btn-p-bg: linear-gradient(135deg, #b06010 0%, #d4821a 50%, #9a5010 100%);
+  --btn-p-shadow: 0 4px 20px rgba(180, 100, 20, 0.5);
+  --btn-p-shadow-hover: 0 6px 28px rgba(180, 100, 20, 0.7);
+
+  --btn-s-bg: rgba(40, 20, 5, 0.8);
+  --btn-s-color: #c8a060;
+  --btn-s-border: rgba(180, 100, 20, 0.4);
+  --btn-s-border-hover: rgba(212, 160, 23, 0.7);
+  --btn-s-color-hover: #d4a017;
+
+  --filter-border: rgba(180, 100, 20, 0.3);
+  --filter-color: #8a6030;
+  --filter-border-hover: rgba(212, 160, 23, 0.5);
+  --filter-color-hover: #c8a060;
+  --filter-active-border: #d4a017;
+  --filter-active-color: #d4a017;
+  --filter-active-bg: rgba(212, 160, 23, 0.1);
+
+  --stats-color: #5a4520;
+}
+
+/* ── T4 badge variants ── */
+.badge-campaign {
+  background: rgba(180, 100, 20, 0.2);
+  border: 1px solid rgba(212, 160, 23, 0.5);
+  color: #d4a017;
+}
+
+.badge-modern-times {
+  background: rgba(20, 80, 120, 0.25);
+  border: 1px solid rgba(80, 150, 200, 0.5);
+  color: #80c0e0;
+}
+
+.badge-dlc {
+  background: rgba(100, 20, 120, 0.25);
+  border: 1px solid rgba(160, 80, 180, 0.5);
+  color: #c080e0;
+}
