@@ -4,59 +4,45 @@
    in the per-game theme file (tropico4.css / tropico6.css).
 ───────────────────────────────────────────────────────────── */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100vh;
-  font-family: "Lato", sans-serif;
+/* ── Picker view theme ── */
+body.view-picker {
   background-color: var(--bg-base);
   color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
   overflow-x: hidden;
-}
 
-/* ── Background ── */
-.bg {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(
-      ellipse at 15% 85%,
-      var(--bg-ellipse-1) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 85% 15%,
-      var(--bg-ellipse-2) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 50% 50%,
-      var(--bg-ellipse-3) 0%,
-      var(--bg-base) 100%
-    );
-  z-index: 0;
-
-  &::before {
-    content: "";
-    position: absolute;
+  .bg {
+    position: fixed;
     inset: 0;
-    background-image: repeating-linear-gradient(
-      var(--bg-stripe-angle),
-      transparent,
-      transparent 60px,
-      var(--bg-stripe-color) 60px,
-      var(--bg-stripe-color) 61px
-    );
+    background:
+      radial-gradient(
+        ellipse at 15% 85%,
+        var(--bg-ellipse-1) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse at 85% 15%,
+        var(--bg-ellipse-2) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 50% 50%,
+        var(--bg-ellipse-3) 0%,
+        var(--bg-base) 100%
+      );
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        var(--bg-stripe-angle),
+        transparent,
+        transparent 60px,
+        var(--bg-stripe-color) 60px,
+        var(--bg-stripe-color) 61px
+      );
+    }
   }
 }
 

@@ -1,13 +1,10 @@
 /* ─────────────────────────────────────────────────────────────
    picker.js — shared random-mission picker logic.
 
-   Required globals (provided by the per-game script):
-     _config.missions   — array of mission objects
-     _config.filterFn   — function(missions, activeFilter) → array
-     _config.renderCard — function(mission) → HTML string
-
-   Global functions exposed for use in HTML:
-     rollMission()
+   Globals exposed for router.js:
+     loadGame(config)  — configure picker for a game
+   Globals exposed for per-game files:
+     _makeBadge / _makeTag / _buildCard — card HTML helpers
 ───────────────────────────────────────────────────────────── */
 
 let _config = null;
@@ -15,7 +12,7 @@ let _activeFilter = "all";
 let _currentMission = null;
 let _rollCount = 0;
 
-/* ── Card-building helpers (shared by per-game renderCard functions) ── */
+/* ── Card-building helpers ── */
 
 function _makeBadge(cls, icon, text) {
   return `<span class="badge ${cls}">${icon} ${text}</span>`;
@@ -37,22 +34,47 @@ function _buildCard({ label, name, meta, desc }) {
   `;
 }
 
-function initPicker(config) {
-  _config = config;
+/* ── Game loader — called by router on each game navigation ── */
 
-  document.querySelectorAll(".filter-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      document
-        .querySelectorAll(".filter-btn")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      _activeFilter = btn.dataset.filter;
-      _updateStats();
-    });
-  });
+function loadGame(config) {
+  _config = config;
+  _activeFilter = "all";
+  _currentMission = null;
+  _rollCount = 0;
+
+  // Build filter buttons dynamically
+  const filtersEl = document.getElementById("picker-filters");
+  filtersEl.innerHTML = config.filters
+    .map(
+      (f) =>
+        `<button class="filter-btn${f.value === "all" ? " active" : ""}" data-filter="${f.value}">${f.label}</button>`,
+    )
+    .join("");
+
+  // Use onclick to replace any previous listener without stacking
+  filtersEl.onclick = (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    filtersEl
+      .querySelectorAll(".filter-btn")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    _activeFilter = btn.dataset.filter;
+    _updateStats();
+  };
+
+  // Reset card to empty state
+  document.getElementById("card").innerHTML = `
+    <div class="card-empty">
+      <div class="icon">${config.emptyIcon}</div>
+      <div>Press the button, El Presidente</div>
+    </div>
+  `;
 
   _updateStats();
 }
+
+/* ── Core picker logic ── */
 
 function _getPool() {
   return _config.filterFn(_config.missions, _activeFilter);
@@ -102,3 +124,6 @@ function _updateStats() {
       ? `${count} mission${count !== 1 ? "s" : ""} in pool · ${_rollCount} roll${_rollCount !== 1 ? "s" : ""} so far`
       : `${count} mission${count !== 1 ? "s" : ""} available`;
 }
+
+// Wire roll button once (element is permanent in the SPA DOM)
+document.getElementById("btn-roll").addEventListener("click", rollMission);

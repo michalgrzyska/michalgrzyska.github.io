@@ -1,5 +1,5 @@
-// tropico6.js — T6-specific rendering and filter logic.
-// Depends on: picker.js (_makeBadge, _makeTag, _buildCard, initPicker), missions-t6.js (MISSIONS_T6)
+// tropico6.js — T6-specific rendering, filter logic, and picker config.
+// Depends on: picker.js (_makeBadge, _makeTag, _buildCard), missions-t6.js (MISSIONS_T6)
 
 const _T6_ERA_BADGE = {
   Colonial: "badge-colonial",
@@ -41,8 +41,22 @@ function _t6FilterFn(missions, filter) {
   return missions.filter((m) => m.era === filter);
 }
 
-initPicker({
+// Config consumed by router.js → loadGame()
+const T6_PICKER_CONFIG = {
   missions: MISSIONS_T6,
   filterFn: _t6FilterFn,
   renderCard: _t6RenderCard,
-});
+  filters: [
+    { value: "all", label: "All" },
+    { value: "Colonial", label: "Colonial" },
+    { value: "World Wars", label: "World Wars" },
+    { value: "Cold War", label: "Cold War" },
+    { value: "Modern", label: "Modern" },
+    { value: "DLC", label: "DLC" },
+  ],
+  emptyIcon: "🏝️",
+  notice:
+    "💡 Tropico 6 features standalone missions (no campaign). Base-game missions unlock progressively by completing others. DLC campaigns can be played independently. Difficulty can be set to Easy, Normal, or Hard for each mission.",
+  theme: "theme-t6",
+  title: "Tropico 6",
+};

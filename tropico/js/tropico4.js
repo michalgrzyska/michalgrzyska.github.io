@@ -1,5 +1,5 @@
-// tropico4.js — T4-specific rendering and filter logic.
-// Depends on: picker.js (_makeBadge, _makeTag, _buildCard, initPicker), missions-t4.js (MISSIONS_T4)
+// tropico4.js — T4-specific rendering, filter logic, and picker config.
+// Depends on: picker.js (_makeBadge, _makeTag, _buildCard), missions-t4.js (MISSIONS_T4)
 
 // Precompute each mission's position within its category, e.g. "3 / 20"
 const _T4_CAT_POSITION = (() => {
@@ -56,8 +56,19 @@ function _t4FilterFn(missions, filter) {
     : missions.filter((m) => m.category === filter);
 }
 
-initPicker({
+// Config consumed by router.js → loadGame()
+const T4_PICKER_CONFIG = {
   missions: MISSIONS_T4,
   filterFn: _t4FilterFn,
   renderCard: _t4RenderCard,
-});
+  filters: [
+    { value: "all", label: "All Missions" },
+    { value: "Campaign", label: "Campaign" },
+    { value: "Modern Times", label: "Modern Times" },
+    { value: "DLC", label: "DLC" },
+  ],
+  emptyIcon: "🌴",
+  notice: null,
+  theme: "theme-t4",
+  title: "Tropico 4",
+};

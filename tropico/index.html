@@ -4,33 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tropico Mission Picker</title>
+    <title>Tropico — Mission Selector</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/tropico4.css" />
+    <link rel="stylesheet" href="css/tropico6.css" />
   </head>
-  <body>
+  <body class="view-home">
     <div class="bg"></div>
-    <div class="container">
-      <div class="emblem">🌴</div>
-      <h1 class="title">Tropico</h1>
-      <p class="subtitle">Mission Selector</p>
-      <div class="divider"></div>
-      <p class="prompt">Choose your island, El Presidente</p>
-      <div class="buttons">
-        <a href="tropico4.html" class="game-btn btn-t4">
-          <span class="btn-label">The Banana Republic</span>
-          Tropico 4
-        </a>
-        <a href="tropico6.html" class="game-btn btn-t6">
-          <span class="btn-label">The Archipelago Era</span>
-          Tropico 6
-        </a>
+
+    <!-- ── Home view ── -->
+    <div id="view-home" class="view">
+      <div class="container">
+        <div class="emblem">🌴</div>
+        <h1 class="title">Tropico</h1>
+        <p class="subtitle">Mission Selector</p>
+        <div class="divider"></div>
+        <p class="prompt">Choose your island, El Presidente</p>
+        <div class="buttons">
+          <a href="#t4" class="game-btn btn-t4">
+            <span class="btn-label">The Banana Republic</span>
+            Tropico 4
+          </a>
+          <a href="#t6" class="game-btn btn-t6">
+            <span class="btn-label">The Archipelago Era</span>
+            Tropico 6
+          </a>
+        </div>
+        <p class="footer">¡Viva El Presidente!</p>
       </div>
-      <p class="footer">¡Viva El Presidente!</p>
     </div>
+
+    <!-- ── Picker view (shared, reconfigured per game by router.js) ── -->
+    <div id="view-picker" class="view" hidden>
+      <div class="page">
+        <div class="header">
+          <a href="#" class="back-link">← Back</a>
+          <h1 class="header-title" id="picker-title"></h1>
+          <div class="header-spacer"></div>
+        </div>
+
+        <div class="filters" id="picker-filters"></div>
+
+        <div class="controls">
+          <button class="btn-roll btn-primary" id="btn-roll">
+            🎲 Random Mission
+          </button>
+        </div>
+
+        <div class="card" id="card">
+          <div class="card-empty">
+            <div class="icon">🌴</div>
+            <div>Press the button, El Presidente</div>
+          </div>
+        </div>
+
+        <div class="notice" id="picker-notice" hidden></div>
+
+        <p class="stats" id="stats"></p>
+      </div>
+    </div>
+
+    <script src="js/missions-t4.js"></script>
+    <script src="js/missions-t6.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/tropico4.js"></script>
+    <script src="js/tropico6.js"></script>
+    <script src="js/router.js"></script>
   </body>
 </html>

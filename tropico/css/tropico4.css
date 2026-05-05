@@ -3,7 +3,7 @@
    Load after shared.css.
 ───────────────────────────────────────────────────────────── */
 
-:root {
+body.theme-t4 {
   --bg-base: #1a0e06;
   --bg-ellipse-1: rgba(160, 80, 10, 0.35);
   --bg-ellipse-2: rgba(100, 50, 10, 0.3);
