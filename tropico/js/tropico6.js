@@ -1,5 +1,5 @@
 // tropico6.js — T6-specific rendering and filter logic.
-// Depends on: picker.js (initPicker, rollMission), missions-t6.js (MISSIONS_T6)
+// Depends on: picker.js (_makeBadge, _makeTag, _buildCard, initPicker), missions-t6.js (MISSIONS_T6)
 
 const _T6_ERA_BADGE = {
   Colonial: "badge-colonial",
@@ -16,30 +16,23 @@ const _T6_ERA_ICON = {
 };
 
 function _t6RenderCard(pick) {
-  const dlcNote = pick.dlc
-    ? `<span class="island-tag" style="margin-left:auto">DLC: <span>${pick.dlc}</span></span>`
+  const isDLC = pick.type === "DLC";
+  const eraCls = _T6_ERA_BADGE[pick.era] ?? "badge-modern";
+  const eraIcon = _T6_ERA_ICON[pick.era] ?? "🌴";
+  const dlcNote = isDLC
+    ? _makeTag("DLC", pick.dlc, true)
     : `<span class="island-tag">Base Game</span>`;
+  const meta =
+    _makeBadge(isDLC ? "badge-dlc" : eraCls, isDLC ? "🎁" : eraIcon, pick.era) +
+    `<span class="badge ${eraCls}" style="opacity:0.6;font-size:0.65rem">${pick.type}</span>` +
+    dlcNote;
 
-  const eraBadgeClass = _T6_ERA_BADGE[pick.era] || "badge-modern";
-  const eraIcon = _T6_ERA_ICON[pick.era] || "🌴";
-  const primaryBadge = pick.type === "DLC" ? "badge-dlc" : eraBadgeClass;
-
-  return `
-    <div class="card-inner" id="card-inner">
-      <div class="mission-number">Mission #${pick.id}</div>
-      <div class="mission-name">${pick.name}</div>
-      <div class="mission-meta">
-        <span class="badge ${primaryBadge}">
-          ${pick.type === "DLC" ? "🎁" : eraIcon} ${pick.era}
-        </span>
-        <span class="badge ${eraBadgeClass}" style="opacity:0.6;font-size:0.65rem">
-          ${pick.type}
-        </span>
-        ${dlcNote}
-      </div>
-      <div class="mission-desc">${pick.desc}</div>
-    </div>
-  `;
+  return _buildCard({
+    label: `Mission #${pick.id}`,
+    name: pick.name,
+    meta,
+    desc: pick.desc,
+  });
 }
 
 function _t6FilterFn(missions, filter) {

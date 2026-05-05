@@ -15,6 +15,28 @@ let _activeFilter = "all";
 let _currentMission = null;
 let _rollCount = 0;
 
+/* ── Card-building helpers (shared by per-game renderCard functions) ── */
+
+function _makeBadge(cls, icon, text) {
+  return `<span class="badge ${cls}">${icon} ${text}</span>`;
+}
+
+function _makeTag(label, value, right = false) {
+  const style = right ? ' style="margin-left:auto"' : "";
+  return `<span class="island-tag"${style}>${label}: <span>${value}</span></span>`;
+}
+
+function _buildCard({ label, name, meta, desc }) {
+  return `
+    <div class="card-inner" id="card-inner">
+      <div class="mission-number">${label}</div>
+      <div class="mission-name">${name}</div>
+      <div class="mission-meta">${meta}</div>
+      <div class="mission-desc">${desc}</div>
+    </div>
+  `;
+}
+
 function initPicker(config) {
   _config = config;
 

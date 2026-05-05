@@ -38,19 +38,19 @@ body {
     ),
     radial-gradient(ellipse at 50% 50%, rgba(10, 40, 25, 0.9) 0%, #0d2b1e 100%);
   z-index: 0;
-}
 
-.bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 40px,
-    rgba(255, 255, 255, 0.015) 40px,
-    rgba(255, 255, 255, 0.015) 41px
-  );
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.015) 40px,
+      rgba(255, 255, 255, 0.015) 41px
+    );
+  }
 }
 
 .container {
@@ -133,24 +133,37 @@ body {
     transform 0.15s ease,
     box-shadow 0.15s ease;
   overflow: hidden;
-}
 
-.game-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.08);
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-.game-btn:hover {
-  transform: translateY(-3px);
-}
-.game-btn:hover::before {
-  opacity: 1;
-}
-.game-btn:active {
-  transform: translateY(0);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.08);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  & .btn-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    opacity: 0.65;
+    margin-bottom: 0.2rem;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+  }
 }
 
 .btn-t4 {
@@ -160,11 +173,12 @@ body {
   box-shadow:
     0 4px 20px rgba(139, 69, 19, 0.5),
     inset 0 1px 0 rgba(255, 220, 120, 0.2);
-}
-.btn-t4:hover {
-  box-shadow:
-    0 8px 30px rgba(139, 69, 19, 0.7),
-    inset 0 1px 0 rgba(255, 220, 120, 0.3);
+
+  &:hover {
+    box-shadow:
+      0 8px 30px rgba(139, 69, 19, 0.7),
+      inset 0 1px 0 rgba(255, 220, 120, 0.3);
+  }
 }
 
 .btn-t6 {
@@ -174,21 +188,12 @@ body {
   box-shadow:
     0 4px 20px rgba(26, 74, 58, 0.5),
     inset 0 1px 0 rgba(120, 220, 170, 0.2);
-}
-.btn-t6:hover {
-  box-shadow:
-    0 8px 30px rgba(26, 74, 58, 0.7),
-    inset 0 1px 0 rgba(120, 220, 170, 0.3);
-}
 
-.btn-label {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  opacity: 0.65;
-  margin-bottom: 0.2rem;
-  font-weight: 400;
-  font-family: "Lato", sans-serif;
+  &:hover {
+    box-shadow:
+      0 8px 30px rgba(26, 74, 58, 0.7),
+      inset 0 1px 0 rgba(120, 220, 170, 0.3);
+  }
 }
 
 .footer {

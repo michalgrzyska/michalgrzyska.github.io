@@ -45,19 +45,19 @@ body {
       var(--bg-base) 100%
     );
   z-index: 0;
-}
 
-.bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    var(--bg-stripe-angle),
-    transparent,
-    transparent 60px,
-    var(--bg-stripe-color) 60px,
-    var(--bg-stripe-color) 61px
-  );
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      var(--bg-stripe-angle),
+      transparent,
+      transparent 60px,
+      var(--bg-stripe-color) 60px,
+      var(--bg-stripe-color) 61px
+    );
+  }
 }
 
 /* ── Page wrapper ── */
@@ -83,21 +83,8 @@ body {
   gap: 0.8rem;
 }
 
-.back-link {
-  font-family: "Cinzel", serif;
-  font-size: 0.8rem;
-  color: var(--back-link-color);
-  text-decoration: none;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.7;
-  transition: opacity 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.back-link:hover {
-  opacity: 1;
+.header-spacer {
+  width: 80px;
 }
 
 .header-title {
@@ -111,8 +98,22 @@ body {
   text-align: center;
 }
 
-.header-spacer {
-  width: 80px;
+.back-link {
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  color: var(--back-link-color);
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 /* ── Mission card ── */
@@ -132,29 +133,30 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-}
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--accent),
-    transparent
-  );
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--accent),
+      transparent
+    );
+  }
 }
 
 .card-inner {
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-.card-inner.visible {
-  opacity: 1;
+
+  &.visible {
+    opacity: 1;
+  }
 }
 
 .mission-number {
@@ -202,9 +204,10 @@ body {
   font-size: 0.75rem;
   color: var(--tag-color);
   letter-spacing: 0.1em;
-}
-.island-tag span {
-  color: var(--tag-span-color);
+
+  & span {
+    color: var(--tag-span-color);
+  }
 }
 
 .mission-desc {
@@ -224,10 +227,11 @@ body {
   font-family: "Cinzel", serif;
   font-size: 1rem;
   letter-spacing: 0.15em;
-}
-.card-empty .icon {
-  font-size: 2.5rem;
-  opacity: 0.4;
+
+  & .icon {
+    font-size: 2.5rem;
+    opacity: 0.4;
+  }
 }
 
 /* ── Controls ── */
@@ -252,21 +256,24 @@ body {
   transition:
     transform 0.12s ease,
     box-shadow 0.12s ease;
-}
-.btn-roll:hover {
-  transform: translateY(-2px);
-}
-.btn-roll:active {
-  transform: translateY(0) scale(0.98);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
 }
 
 .btn-primary {
   background: var(--btn-p-bg);
   color: var(--btn-p-color);
   box-shadow: var(--btn-p-shadow);
-}
-.btn-primary:hover {
-  box-shadow: var(--btn-p-shadow-hover);
+
+  &:hover {
+    box-shadow: var(--btn-p-shadow-hover);
+  }
 }
 
 .btn-secondary {
@@ -274,10 +281,11 @@ body {
   color: var(--btn-s-color);
   border: 1px solid var(--btn-s-border);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-.btn-secondary:hover {
-  border-color: var(--btn-s-border-hover);
-  color: var(--btn-s-color-hover);
+
+  &:hover {
+    border-color: var(--btn-s-border-hover);
+    color: var(--btn-s-color-hover);
+  }
 }
 
 /* ── Filters ── */
@@ -302,15 +310,17 @@ body {
   color: var(--filter-color);
   cursor: pointer;
   transition: all 0.15s ease;
-}
-.filter-btn:hover {
-  border-color: var(--filter-border-hover);
-  color: var(--filter-color-hover);
-}
-.filter-btn.active {
-  border-color: var(--filter-active-border);
-  color: var(--filter-active-color);
-  background: var(--filter-active-bg);
+
+  &:hover {
+    border-color: var(--filter-border-hover);
+    color: var(--filter-color-hover);
+  }
+
+  &.active {
+    border-color: var(--filter-active-border);
+    color: var(--filter-active-color);
+    background: var(--filter-active-bg);
+  }
 }
 
 /* ── Stats ── */
